@@ -6,5 +6,5 @@
 
 (defn -main
   []
-  (LwjglApplication. pong "pong" 800 600)
+  (LwjglApplication. pong "pong" 480 640)
   (Keyboard/enableRepeatEvents true))
