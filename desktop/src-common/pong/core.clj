@@ -1,7 +1,6 @@
 (ns pong.core
   (:require [play-clj.core :refer :all]
-            [play-clj.g2d :refer :all]
-            [play-clj.ui :refer :all]))
+            [play-clj.g2d :refer :all]))
 
 (use 'play-clj.repl)
 (declare pong main-screen)
@@ -10,7 +9,8 @@
   :on-show
   (fn [screen entities]
     (update! screen :renderer (stage))
-    (label "foo" (color :white)))
+    (let [background (texture "background.png")]
+      [background]))
 
   :on-render
   (fn [screen entities]
