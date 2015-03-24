@@ -5,6 +5,9 @@
 (use 'play-clj.repl)
 (declare pong main-screen)
 
+(def game-center-x 240)
+(def game-center-y 320)
+
 (defscreen main-screen
   :on-show
   (fn [screen entities]
