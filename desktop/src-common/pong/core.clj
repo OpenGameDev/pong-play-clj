@@ -12,7 +12,8 @@
   :on-show
   (fn [screen entities]
     (update! screen :renderer (stage))
-    (let [background (texture "background.png")]
+    (let [background (assoc (texture "background.png")
+                       :width 480 :height 640)]
       [background]))
 
   :on-render
