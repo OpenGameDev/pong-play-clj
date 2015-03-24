@@ -28,6 +28,18 @@
     (cond
      (key-pressed? :r) (on-gl (set-screen! pong main-screen)))))
 
+
+(defscreen blank-screen
+  :on-render
+  (fn [screen entities]
+    (clear!)))
+
+(set-screen-wrapper! (fn [screen screen-fn]
+                       (try (screen-fn)
+                         (catch Exception e
+                           (.printStackTrace e)
+                           (set-screen! pong blank-screen)))))
+
 (defgame pong
   :on-create
   (fn [this]
