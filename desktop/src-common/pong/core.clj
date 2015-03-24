@@ -13,8 +13,10 @@
   (fn [screen entities]
     (update! screen :renderer (stage))
     (let [background (assoc (texture "background.png")
-                       :width 480 :height 640)]
-      [background]))
+                       :width 480 :height 640)
+          paddle (assoc (texture "paddle.png")
+                   :x game-center-x :y 0)]
+      [background paddle]))
 
   :on-render
   (fn [screen entities]
