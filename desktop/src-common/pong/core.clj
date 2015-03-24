@@ -24,7 +24,7 @@
   :on-key-down
   (fn [screen entities]
     (cond
-     (key-pressed? :r) (set-screen! pong main-screen))))
+     (key-pressed? :r) (on-gl (set-screen! pong main-screen)))))
 
 (defgame pong
   :on-create
